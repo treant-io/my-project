@@ -1,0 +1,24 @@
+plugins {
+  id "com.microsoft.azure.azurefunctions" version "1.8.0"
+}
+apply plugin: "java"
+
+group 'com.treant'
+version '0.0.1'
+
+dependencies {
+  implementation 'com.microsoft.azure.functions:azure-functions-java-library:1.4.2'
+  testImplementation 'org.mockito:mockito-core:2.23.4'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+azurefunctions {
+    appName = 'http-trigger-gradle-template' // please rename the function name
+}
